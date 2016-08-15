@@ -1,0 +1,5 @@
+D:\Works\myPrograms\naturalElements\naturalElements\bin\naturalElements.dll
+D:\Works\myPrograms\naturalElements\naturalElements\bin\naturalElements.pdb
+D:\Works\myPrograms\naturalElements\naturalElements\obj\Debug32\naturalElements.csprojResolveAssemblyReference.cache
+D:\Works\myPrograms\naturalElements\naturalElements\obj\Debug32\naturalElements.dll
+D:\Works\myPrograms\naturalElements\naturalElements\obj\Debug32\naturalElements.pdb
