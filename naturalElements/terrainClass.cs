@@ -22,7 +22,7 @@ public class terrain
         originalSurface = surface;
 
         surfaceBoundBox = surface.GetBoundingBox(false);
-        basePoint = surfaceBoundBox.PointAt(0.5,0.5,1);
+        basePoint = surfaceBoundBox.PointAt(0.5,0.5,0);
 	}
 
     //this is the terrainSurface method, which is a 'NurbsCurve' object corresponding to the terrain geometry
@@ -123,16 +123,19 @@ public class terrain
         while(curGen < genNum)
         {
             //calculating the number of control points in each direction
-            count = (2 * (curGen+1)) + 3;
+            count = (2 * (curGen+1)) + 3+2;
             //rebuilding the surface with the above number of control points
             terrainSurface = terrainSurface.Rebuild(2, 2, count, count);
 
             //creating undulations
-            int u = 2;
-            while(u < count-2)
+            int uBuffer = 3;
+            int vBuffer = 3;
+
+            int u = uBuffer;
+            while(u < count-uBuffer)
             {
-                int v = 2;
-                while (v < count-2)
+                int v = vBuffer;
+                while (v < count-vBuffer)
                 {
                     curHeight = startHeight * Math.Pow(decayRate, curGen);
                     double decide = toss.NextDouble();
